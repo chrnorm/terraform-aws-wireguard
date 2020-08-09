@@ -9,6 +9,7 @@ data "template_file" "user_data" {
     use_eip               = var.use_eip ? "enabled" : "disabled"
     eip_id                = var.eip_id
     wg_server_interface   = var.wg_server_interface
+    forward_traffic       = var.forward_traffic
   }
 }
 

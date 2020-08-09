@@ -32,7 +32,7 @@ variable "subnet_ids" {
 }
 
 variable "wg_clients" {
-  type        = list(object({ name=string, public_key=string, client_ip=string }))
+  type        = list(object({ name = string, public_key = string, client_ip = string }))
   description = "List of client objects with IP and public key. See Usage in README for details."
 }
 
@@ -92,4 +92,9 @@ variable "ami_id" {
 variable "wg_server_interface" {
   default     = "eth0"
   description = "The default interface to forward network traffic to."
+}
+
+variable "forward_traffic" {
+  default     = "false"
+  description = "Will this WireGuard server forward traffic to other hosts on the network?"
 }
